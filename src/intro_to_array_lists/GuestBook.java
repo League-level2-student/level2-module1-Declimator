@@ -2,9 +2,11 @@ package intro_to_array_lists;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class GuestBook implements ActionListener {
@@ -12,11 +14,13 @@ public class GuestBook implements ActionListener {
 	JPanel panel;
 	JButton buttonone;
 	JButton buttontwo;
+	ArrayList<String> add;
 	public static void main(String[] args) {
 	GuestBook g = new GuestBook();
 	g.guestbook();
 	}
 	public void guestbook(){
+		add = new ArrayList<String>();
 		frame = new JFrame();
 		panel = new JPanel();
 		buttonone = new JButton();
@@ -42,7 +46,12 @@ public class GuestBook implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		
+		if(e.getSource()==buttonone) {
+			add.add(JOptionPane.showInputDialog("Add a name"));
+		}
+		else if(e.getSource()==buttontwo) {
+			JOptionPane.showMessageDialog(null, "");
+		}
 	}
 
 }
