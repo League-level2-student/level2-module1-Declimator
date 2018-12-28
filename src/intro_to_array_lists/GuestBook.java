@@ -34,6 +34,7 @@ public class GuestBook implements ActionListener {
 		buttonone.setText("Add Name");
 		buttontwo.setText("View Names");
 		frame.pack();
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 	// Create a GUI with two buttons. One button reads "Add Name" and the other button reads "View Names". 
 	// When the add name button is clicked, display an input dialog that asks the user to enter a name. Add
@@ -50,7 +51,9 @@ public class GuestBook implements ActionListener {
 			add.add(JOptionPane.showInputDialog("Add a name"));
 		}
 		else if(e.getSource()==buttontwo) {
-			JOptionPane.showMessageDialog(null, "");
+			for(int i=0;i<add.size();i++){
+				System.out.println("Guest #" + (i+1) + ":" + add.get(i));
+			}
 		}
 	}
 
